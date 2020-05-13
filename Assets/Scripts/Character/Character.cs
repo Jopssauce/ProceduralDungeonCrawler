@@ -8,6 +8,9 @@ public class Character : GridEntity
     public event OnSetNextTile onSetNextTile;
 
     public float speed;
+    public CharacterStats stats;
+    public CharacterSkills skills;
+    public Vector2Int facingDirection;
 
     Vector3Int nextTile;
     public Vector3Int NextTile
