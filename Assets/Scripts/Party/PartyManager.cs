@@ -4,31 +4,20 @@ using UnityEngine;
 
 public class PartyManager : MonoBehaviour
 {
-    public List<Character> partyMembers;
-    List<Character> party;
-    public Character partyLeader;
+    public List<PartyMember> partyMembers;
+
+    public List<PartyMember> party;
+    public PartyMember partyLeader;
     public DungeonManager dungeonManager;
 
-    bool isInitialized;
-
-    private void Update()
+    public void InitializeParty(Vector3 position, Grid grid)
     {
-        if (partyLeader.currentTile != partyLeader.NextTile)
-        {
-            MoveParty();
-        }
-    }
-
-    public void InitializeParty(Character partyLeader, Grid grid)
-    {
-        party = new List<Character>();
-        this.partyLeader = partyLeader;
-        party.Add(partyLeader);
+        party = new List<PartyMember>();
 
         for (int i = 0; i < partyMembers.Count; i++)
         {
             int index = i - 1;
-            Character partyMember = Instantiate(partyMembers[i]);
+            PartyMember partyMember = Instantiate(partyMembers[i], position, partyMembers[i].transform.rotation);
             partyMember.grid = grid;
             party.Add(partyMember);
         }
@@ -39,16 +28,9 @@ public class PartyManager : MonoBehaviour
             party[i].transform.position = new Vector3(party[index].transform.position.x + 1, party[index].transform.position.y, 0);
         }
 
-        isInitialized = true;
+        this.partyLeader = party[0];
     }
 
-    void MoveParty()
-    {
-        for (int i = 1; i < party.Count; i++)
-        {
-            int index = i - 1;
-            party[i].SetNextTile(party[index].currentTile);
-        }
-    }
+    
 
 }

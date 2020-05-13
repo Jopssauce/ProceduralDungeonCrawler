@@ -35,12 +35,12 @@ public class GridEntity : MonoBehaviour
     /// Creates a ray in one direction and checks for possible collision
     /// </summary>
     /// <returns></returns>
-    public bool WillCollide(Vector3 position, Vector2 direction, float rayDistance)
+    public bool WillCollide(Vector2 direction, float rayDistance)
     {
         RaycastHit2D hit;
         Ray2D ray2D;
 
-        ray2D = new Ray2D(position, direction);
+        ray2D = new Ray2D(transform.position, direction);
         hit = Physics2D.Raycast(ray2D.origin, ray2D.direction, rayDistance);
         if (hit.collider)
         {
