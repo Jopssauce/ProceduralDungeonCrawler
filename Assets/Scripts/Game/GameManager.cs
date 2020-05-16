@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour
 {
     public DungeonManager dungeonManager;
     public PartyManager partyManager;
+    public GameObject enemyPrefab;
 
     private void Awake()
     {
@@ -15,8 +16,9 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
         //Debug Tool
-        if (Input.GetKeyDown(KeyCode.F1))
+        if (Input.GetKeyDown(KeyCode.F2))
         {
+            PlaceEnemies();
         }
 
         if (partyManager.partyLeader != null)
@@ -32,6 +34,17 @@ public class GameManager : MonoBehaviour
         DungeonGenerator.Room room = dungeonManager.dungeonGenerator.Rooms[Random.Range(0, dungeonManager.dungeonGenerator.Rooms.Count)];
 
         partyManager.InitializeParty(dungeonManager.grid.GetCellCenterWorld(room.centerGridTile), dungeonManager.grid);
+    }
+
+    void PlaceEnemies()
+    {
+        DungeonGenerator dungeonGenerator = dungeonManager.dungeonGenerator;
+        for (int i = 0; i < dungeonManager.dungeonGenerator.Rooms.Count; i++)
+        {
+            DungeonGenerator.Room room = dungeonGenerator.Rooms[i];
+            GameObject enemy = Instantiate(enemyPrefab, dungeonManager.grid.GetCellCenterWorld(room.centerGridTile) - Vector3.one, enemyPrefab.transform.rotation);
+            enemy.GetComponent<Character>().grid = dungeonManager.grid;
+        }
     }
 
 }
