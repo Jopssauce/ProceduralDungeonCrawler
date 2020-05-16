@@ -1,8 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class Skill : MonoBehaviour
+public class Skill : ScriptableObject
 {
     public enum SkillType
     {
@@ -13,14 +12,16 @@ public class Skill : MonoBehaviour
 
     public string skillName;
     public SkillType type;
-    public float castRange;
+    public int castRange = 1;
 
     //How the skill will be casted
     //Mainly used to setup the skill and aquire targets
+    //Cast Skill without caster
     public virtual void CastSkill(Grid grid) { }
 
     //How the caster will cast the skill
     //Mainly used to setup the skill and aquire targets
+    //Cast Skill with caster
     public virtual void CastSkill(Character caster, Grid grid) { }
 
     //Apply on single target

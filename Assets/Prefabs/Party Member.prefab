@@ -9,10 +9,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9163854474645529318}
-  - component: {fileID: 2592933025640563774}
   - component: {fileID: 9163854474645529319}
   - component: {fileID: 9163854474645529316}
   - component: {fileID: 9163854474645529323}
+  - component: {fileID: 8642222996667593860}
+  - component: {fileID: 46716085376306180}
   m_Layer: 0
   m_Name: Party Member
   m_TagString: Untagged
@@ -34,21 +35,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2592933025640563774
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9163854474645529312}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac6440870eb4eae46a8d61cebb13c00c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  grid: {fileID: 0}
-  currentTile: {x: 0, y: 0, z: 0}
-  speed: 6
 --- !u!212 &9163854474645529319
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -147,3 +133,41 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &8642222996667593860
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9163854474645529312}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac6440870eb4eae46a8d61cebb13c00c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  grid: {fileID: 0}
+  currentTile: {x: 0, y: 0, z: 0}
+  speed: 6
+  stats:
+    health: 20
+    mana: 15
+    defense: 5
+    magicDefense: 9
+    attack: 14
+    magicAttack: 8
+  skills:
+    defaultSkill: {fileID: 11400000, guid: daad8bfea0a2e27469790e3db64b1958, type: 2}
+    skills: []
+  facingDirection: {x: 0, y: 0}
+--- !u!114 &46716085376306180
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9163854474645529312}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15c3e8f985ab03745bb9904f883ee937, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

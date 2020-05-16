@@ -482,6 +482,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dungeonManager: {fileID: 324176637}
   partyManager: {fileID: 2140819813}
+  enemyPrefab: {fileID: 3214077956786625527, guid: 41ad6c9764397e7448c5afaf4ba79a21,
+    type: 3}
 --- !u!4 &1960069587
 Transform:
   m_ObjectHideFlags: 0
@@ -590,6 +592,7 @@ GameObject:
   - component: {fileID: 2140819814}
   - component: {fileID: 2140819813}
   - component: {fileID: 2140819815}
+  - component: {fileID: 2140819816}
   m_Layer: 0
   m_Name: Party Manager
   m_TagString: Untagged
@@ -610,9 +613,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   partyMembers:
-  - {fileID: 2592933025640563774, guid: 1596d7eb0bfb5a6429a12b4a1ced0e68, type: 3}
-  - {fileID: 2592933025640563774, guid: 1596d7eb0bfb5a6429a12b4a1ced0e68, type: 3}
-  - {fileID: 2592933025640563774, guid: 1596d7eb0bfb5a6429a12b4a1ced0e68, type: 3}
+  - {fileID: 8642222996667593860, guid: 1596d7eb0bfb5a6429a12b4a1ced0e68, type: 3}
+  - {fileID: 8642222996667593860, guid: 1596d7eb0bfb5a6429a12b4a1ced0e68, type: 3}
+  - {fileID: 8642222996667593860, guid: 1596d7eb0bfb5a6429a12b4a1ced0e68, type: 3}
   party: []
   partyLeader: {fileID: 0}
   dungeonManager: {fileID: 324176637}
@@ -643,3 +646,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rayDistance: 1
+--- !u!114 &2140819816
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2140819812}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57ccc0473fc334742a9f225e0e196fc1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
