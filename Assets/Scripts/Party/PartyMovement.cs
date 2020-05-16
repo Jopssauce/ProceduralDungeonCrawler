@@ -49,6 +49,8 @@ public class PartyMovement : MonoBehaviour
         {
             MoveParty();
         }
+
+        ChangePartyLeaderFacingDirection(partyLeader);
     }
 
     void MovePartyLeader(PartyMember partyLeader, Grid grid)
@@ -57,12 +59,28 @@ public class PartyMovement : MonoBehaviour
         if (Input.GetAxisRaw("Horizontal") != 0 && !partyLeader.WillCollide(Vector2.right * Input.GetAxisRaw("Horizontal"), rayDistance))
         {
             direction = Vector3.right * Input.GetAxisRaw("Horizontal");
+            partyLeader.facingDirection = new Vector2Int((int)direction.x, (int)direction.y);
             partyLeader.SetNextTile(partyLeader.currentTile + grid.WorldToCell(direction));
         }
         else if (Input.GetAxisRaw("Vertical") != 0 && !partyLeader.WillCollide(Vector2.up * Input.GetAxisRaw("Vertical"), rayDistance))
         {
             direction = Vector3.up * Input.GetAxisRaw("Vertical");
+            partyLeader.facingDirection = new Vector2Int((int)direction.x, (int)direction.y);
             partyLeader.SetNextTile(partyLeader.currentTile + grid.WorldToCell(direction));
+        }
+    }
+
+    void ChangePartyLeaderFacingDirection(PartyMember partyLeader)
+    {
+        if (Input.GetAxisRaw("Horizontal") != 0)
+        {
+            Vector3 direction = Vector3.right * Input.GetAxisRaw("Horizontal");
+            partyLeader.facingDirection = new Vector2Int((int)direction.x, (int)direction.y);
+        }
+        else if (Input.GetAxisRaw("Vertical") != 0)
+        {
+            Vector3 direction = Vector3.up * Input.GetAxisRaw("Vertical");
+            partyLeader.facingDirection = new Vector2Int((int)direction.x, (int)direction.y);
         }
     }
 
