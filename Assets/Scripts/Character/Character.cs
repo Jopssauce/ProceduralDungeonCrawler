@@ -7,7 +7,7 @@ public class Character : GridEntity
     public delegate void OnSetNextTile();
     public event OnSetNextTile onSetNextTile;
 
-    public float speed;
+    public float speed = 6;
     public CharacterStats stats;
     public CharacterSkills skills;
     public Vector2Int facingDirection;
@@ -36,6 +36,8 @@ public class Character : GridEntity
     public virtual void SetNextTile(Vector3Int target)
     {
         NextTile = target;
+        Vector3Int d = nextTile - currentTile;
+        facingDirection = (Vector2Int)d;
         onSetNextTile?.Invoke();
     }
 
