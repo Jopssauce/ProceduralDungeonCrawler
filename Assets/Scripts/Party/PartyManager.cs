@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class PartyManager : MonoBehaviour
 {
-    public List<PartyMember> partyMembers;
+    [SerializeField]
+    private List<PartyMember> partyMembers;
 
-    public List<PartyMember> party;
     public PartyMember partyLeader;
+    public List<PartyMember> party;
+
     public DungeonManager dungeonManager;
 
     public void InitializeParty(Vector3 position, Grid grid)
@@ -16,8 +18,8 @@ public class PartyManager : MonoBehaviour
 
         for (int i = 0; i < partyMembers.Count; i++)
         {
-            int index = i - 1;
             PartyMember partyMember = Instantiate(partyMembers[i], position, partyMembers[i].transform.rotation);
+            partyMember.partyIndex = i;
             partyMember.grid = grid;
             party.Add(partyMember);
         }

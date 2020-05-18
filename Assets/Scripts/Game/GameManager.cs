@@ -20,6 +20,22 @@ public class GameManager : MonoBehaviour
         {
             PlaceEnemies();
         }
+        if (Input.GetKey(KeyCode.Alpha1))
+        {
+            partyManager.partyLeader = partyManager.party[0];
+        }
+        if (Input.GetKey(KeyCode.Alpha2))
+        {
+            partyManager.partyLeader = partyManager.party[1];
+        }
+        if (Input.GetKey(KeyCode.Alpha3))
+        {
+            partyManager.partyLeader = partyManager.party[2];
+        }
+        if (Input.GetKey(KeyCode.Alpha4))
+        {
+            partyManager.partyLeader = partyManager.party[3];
+        }
 
         if (partyManager.partyLeader != null)
         {
