@@ -616,6 +616,7 @@ MonoBehaviour:
   - {fileID: 8642222996667593860, guid: 1596d7eb0bfb5a6429a12b4a1ced0e68, type: 3}
   - {fileID: 8642222996667593860, guid: 1596d7eb0bfb5a6429a12b4a1ced0e68, type: 3}
   - {fileID: 8642222996667593860, guid: 1596d7eb0bfb5a6429a12b4a1ced0e68, type: 3}
+  - {fileID: 8642222996667593860, guid: 1596d7eb0bfb5a6429a12b4a1ced0e68, type: 3}
   party: []
   partyLeader: {fileID: 0}
   dungeonManager: {fileID: 324176637}
