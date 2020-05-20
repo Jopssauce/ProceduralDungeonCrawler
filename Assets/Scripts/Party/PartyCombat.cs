@@ -16,7 +16,7 @@ public class PartyCombat : MonoBehaviour
         Character partyLeader = partyManager.partyLeader;
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            partyLeader.GetComponent<CharacterCombat>().Attack(partyLeader.skills.defaultSkill, partyManager.dungeonManager.grid);
+            partyLeader.GetComponent<CharacterCombat>().Attack(partyLeader.skills.defaultSkill, partyManager.dungeonManager);
         }
     }
 }

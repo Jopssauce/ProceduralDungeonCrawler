@@ -17,12 +17,12 @@ public class Skill : ScriptableObject
     //How the skill will be casted
     //Mainly used to setup the skill and aquire targets
     //Cast Skill without caster
-    public virtual void CastSkill(Grid grid) { }
+    public virtual void CastSkill(DungeonManager dungeonManager) { }
 
     //How the caster will cast the skill
     //Mainly used to setup the skill and aquire targets
     //Cast Skill with caster
-    public virtual void CastSkill(Character caster, Grid grid) { }
+    public virtual void CastSkill(Character caster, DungeonManager dungeonManager) { }
 
     //Apply on single target
     protected virtual void ApplySkill(Character target) { }

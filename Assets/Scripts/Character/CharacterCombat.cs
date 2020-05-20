@@ -12,8 +12,8 @@ public class CharacterCombat : MonoBehaviour
         character = GetComponent<Character>();
     }
 
-    public void Attack(Skill skill, Grid grid)
+    public void Attack(Skill skill, DungeonManager dungeonManager)
     {
-        skill.CastSkill(character, grid);
+        skill.CastSkill(character, dungeonManager);
     }
 }
