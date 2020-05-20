@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 9163854474645529323}
   - component: {fileID: 8642222996667593860}
   - component: {fileID: 46716085376306180}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Party Member
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -149,16 +149,17 @@ MonoBehaviour:
   currentTile: {x: 0, y: 0, z: 0}
   speed: 6
   stats:
-    health: 20
-    mana: 15
+    <Health>k__BackingField: 20
+    <Mana>k__BackingField: 15
     defense: 5
     magicDefense: 9
     attack: 14
     magicAttack: 8
   skills:
-    defaultSkill: {fileID: 11400000, guid: daad8bfea0a2e27469790e3db64b1958, type: 2}
+    defaultSkill: {fileID: 11400000, guid: 59260c70b1013c347a12ecbb222a3036, type: 2}
     skills: []
   facingDirection: {x: 0, y: 0}
+  partyIndex: 0
 --- !u!114 &46716085376306180
 MonoBehaviour:
   m_ObjectHideFlags: 0
