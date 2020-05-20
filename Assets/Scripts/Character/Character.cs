@@ -35,6 +35,7 @@ public class Character : GridEntity
 
     public virtual void SetNextTile(Vector3Int target)
     {
+        dungeonManager.dungeonGenerator.DungeonTerrainTiles[currentTile.x, currentTile.y].gridEntity = null;
         NextTile = target;
         Vector3Int d = nextTile - currentTile;
         facingDirection = (Vector2Int)d;

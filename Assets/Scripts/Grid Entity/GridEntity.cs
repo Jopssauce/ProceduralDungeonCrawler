@@ -4,14 +4,16 @@ using UnityEngine;
 
 public class GridEntity : MonoBehaviour
 {
-    public Grid grid;
+    public DungeonManager dungeonManager;
+    protected Grid grid;
     public Vector3Int currentTile;
 
     protected virtual void Start()
     {
+        grid = dungeonManager.grid;
         currentTile = grid.WorldToCell(transform.position);
     }
-
+    //TODO: Update tiles that they are occupied by this entity
     /// <summary>
     /// Sets the tile for the Entity to move towards to
     /// </summary>
@@ -27,6 +29,7 @@ public class GridEntity : MonoBehaviour
         else
         {
             currentTile = nextTile;
+            dungeonManager.dungeonGenerator.DungeonTerrainTiles[currentTile.x, currentTile.y].gridEntity = this;
             transform.position = grid.GetCellCenterWorld(currentTile);
         }
     }
@@ -42,7 +45,7 @@ public class GridEntity : MonoBehaviour
 
         ray2D = new Ray2D(transform.position, direction);
         hit = Physics2D.Raycast(ray2D.origin, ray2D.direction, rayDistance);
-        if (hit.collider)
+        if (hit.collider && hit.collider.gameObject != this.gameObject)
         {
             return true;
         }
