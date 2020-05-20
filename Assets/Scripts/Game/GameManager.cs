@@ -43,7 +43,7 @@ public class GameManager : MonoBehaviour
         {
             DungeonGenerator.Room room = dungeonGenerator.Rooms[i];
             GameObject enemy = Instantiate(enemyPrefab, dungeonManager.grid.GetCellCenterWorld(room.centerGridTile) - Vector3.one, enemyPrefab.transform.rotation);
-            enemy.GetComponent<Character>().grid = dungeonManager.grid;
+            enemy.GetComponent<Character>().dungeonManager = dungeonManager;
         }
     }
 

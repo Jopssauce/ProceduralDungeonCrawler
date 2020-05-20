@@ -5,7 +5,7 @@ using UnityEngine;
 public class PartyManager : MonoBehaviour
 {
     [SerializeField]
-    private List<PartyMember> partyMembers;
+    private List<PartyMember> partyMembers = null;
 
     public PartyMember partyLeader;
     public List<PartyMember> party;
@@ -20,7 +20,7 @@ public class PartyManager : MonoBehaviour
         {
             PartyMember partyMember = Instantiate(partyMembers[i], position, partyMembers[i].transform.rotation);
             partyMember.partyIndex = i;
-            partyMember.grid = grid;
+            partyMember.dungeonManager = dungeonManager;
             party.Add(partyMember);
         }
 
