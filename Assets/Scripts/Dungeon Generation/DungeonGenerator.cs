@@ -39,6 +39,7 @@ public class DungeonGenerator : MonoBehaviour
 
     public class DungeonTerrainTile
     {
+        public GridEntity gridEntity;
         public DungeonTerrainTile(TileType type)
         {
             tileType = type;
