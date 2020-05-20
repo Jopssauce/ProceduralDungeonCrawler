@@ -52,7 +52,6 @@ public class WideSlash : Skill
 
         for (int i = 0; i < targets.Length; i++)
         {
-            Debug.Log(targets[i].gameObject, targets[i].gameObject);
             targets[i].stats.DeductHealth((caster.stats.attack * 2) - targets[i].stats.defense);
         }
     }
