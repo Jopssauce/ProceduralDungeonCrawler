@@ -13,6 +13,7 @@ public class Skill : ScriptableObject
     public string skillName;
     public SkillType type;
     public int castRange = 1;
+    public int mpCost = 2;
 
     //How the skill will be casted
     //Mainly used to setup the skill and aquire targets
