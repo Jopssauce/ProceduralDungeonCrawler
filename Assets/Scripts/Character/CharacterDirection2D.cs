@@ -55,7 +55,7 @@ public class CharacterDirection2D
         }
         if (front.x != 0)
         {
-            right.y = front.x;
+            right.y = front.x * -1;
         }
 
         return right;
