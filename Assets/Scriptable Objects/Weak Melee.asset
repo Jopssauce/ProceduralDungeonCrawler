@@ -9,9 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5756c8e95b9f02c4e99fb092895ec799, type: 3}
-  m_Name: Weak Melee Skill
+  m_Script: {fileID: 11500000, guid: a2aea0b6db057a54ba0f87ead56d687a, type: 3}
+  m_Name: Weak Melee
   m_EditorClassIdentifier: 
-  skillName: Weak Melee Skill
+  skillName: 
   type: 0
   castRange: 1
+  mpCost: 2
+  aoeRange: 0
+  skillDirection: 0

@@ -2,19 +2,47 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Wide Slash Skill", menuName = "ScriptableObjects/Default Skills/Wide Slash Skill")]
-public class WideSlash : Skill
+[CreateAssetMenu(fileName = "Directional Damage Skill", menuName = "ScriptableObjects/Default Skills/Directional Damage Skill")]
+public class DirectionalDamageSkill : Skill
 {
     public int aoeRange;
+    public enum SkillDirection
+    {
+        Front,
+        Back,
+        Left,
+        Right
+    }
+    public SkillDirection skillDirection = SkillDirection.Front;
+
     public override void CastSkill(Character caster, DungeonManager dungeonManager)
     {
         base.CastSkill(caster, dungeonManager);
         List<Character> targets = new List<Character>();
+
         Vector2Int facingDirection = caster.characterDirection.GetOrientation(CharacterDirection2D.Orientation.Front);
 
         if (facingDirection == Vector2Int.zero)
         {
             return;
+        }
+
+        switch (this.skillDirection)
+        {
+            case SkillDirection.Front:
+                facingDirection = caster.characterDirection.GetOrientation(CharacterDirection2D.Orientation.Front);
+                break;
+            case SkillDirection.Back:
+                facingDirection = caster.characterDirection.GetOrientation(CharacterDirection2D.Orientation.Back);
+                break;
+            case SkillDirection.Left:
+                facingDirection = caster.characterDirection.GetOrientation(CharacterDirection2D.Orientation.Left);
+                break;
+            case SkillDirection.Right:
+                facingDirection = caster.characterDirection.GetOrientation(CharacterDirection2D.Orientation.Right);
+                break;
+            default:
+                break;
         }
 
         for (int i = -aoeRange; i <= aoeRange; i++)
@@ -30,6 +58,8 @@ public class WideSlash : Skill
                 newPostion = new Vector3(caster.transform.position.x + i, caster.transform.position.y + castRange * facingDirection.y, 0);
             }
 
+            Debug.Log(newPostion);
+
             Vector3Int tile = dungeonManager.grid.WorldToCell(newPostion);
             GridEntity gridEntity = dungeonManager.dungeonGenerator.DungeonTerrainTiles[tile.x, tile.y].gridEntity;
             if (gridEntity != null)
@@ -40,7 +70,7 @@ public class WideSlash : Skill
                 {
                     targets.Add(character);
                 }
-            }        
+            }
         }
 
         ApplySkill(caster, targets.ToArray());
