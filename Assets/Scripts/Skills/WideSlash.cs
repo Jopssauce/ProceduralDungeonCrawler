@@ -10,8 +10,9 @@ public class WideSlash : Skill
     {
         base.CastSkill(caster, dungeonManager);
         List<Character> targets = new List<Character>();
+        Vector2Int facingDirection = caster.characterDirection.GetOrientation(CharacterDirection2D.Orientation.Front);
 
-        if (caster.facingDirection == Vector2Int.zero)
+        if (facingDirection == Vector2Int.zero)
         {
             return;
         }
@@ -19,14 +20,14 @@ public class WideSlash : Skill
         for (int i = -aoeRange; i <= aoeRange; i++)
         {
             Vector3 newPostion = Vector3.zero;
-            if (caster.facingDirection.x != 0)
+            if (facingDirection.x != 0)
             {
-                newPostion = new Vector3(caster.transform.position.x + castRange * caster.facingDirection.x, caster.transform.position.y + i, 0);
+                newPostion = new Vector3(caster.transform.position.x + castRange * facingDirection.x, caster.transform.position.y + i, 0);
             }
-            else if (caster.facingDirection.y != 0)
+            else if (facingDirection.y != 0)
             {
 
-                newPostion = new Vector3(caster.transform.position.x + i, caster.transform.position.y + castRange * caster.facingDirection.y, 0);
+                newPostion = new Vector3(caster.transform.position.x + i, caster.transform.position.y + castRange * facingDirection.y, 0);
             }
 
             Vector3Int tile = dungeonManager.grid.WorldToCell(newPostion);

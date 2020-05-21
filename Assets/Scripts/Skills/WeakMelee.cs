@@ -12,7 +12,7 @@ public class WeakMelee : Skill
         RaycastHit2D hit;
         Ray2D ray2D;
 
-        ray2D = new Ray2D(caster.transform.position, caster.facingDirection);
+        ray2D = new Ray2D(caster.transform.position, caster.characterDirection.GetOrientation(CharacterDirection2D.Orientation.Front));
         hit = Physics2D.Raycast(ray2D.origin, ray2D.direction, castRange);
 
         if (hit)

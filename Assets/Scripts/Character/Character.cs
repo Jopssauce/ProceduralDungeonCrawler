@@ -10,7 +10,7 @@ public class Character : GridEntity
     public float speed = 6;
     public CharacterStats stats;
     public CharacterSkills skills;
-    public Vector2Int facingDirection;
+    public CharacterDirection2D characterDirection;
 
     Vector3Int nextTile;
     public Vector3Int NextTile
@@ -38,7 +38,7 @@ public class Character : GridEntity
         dungeonManager.dungeonGenerator.DungeonTerrainTiles[currentTile.x, currentTile.y].gridEntity = null;
         NextTile = target;
         Vector3Int d = nextTile - currentTile;
-        facingDirection = (Vector2Int)d;
+        characterDirection.SetFront((Vector2Int)d);
         onSetNextTile?.Invoke();
     }
 
