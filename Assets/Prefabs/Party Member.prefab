@@ -158,7 +158,7 @@ MonoBehaviour:
     attack: 14
     magicAttack: 8
   skills:
-    defaultSkill: {fileID: 11400000, guid: a903fb7c9b631fd48acb7af21cddbf50, type: 2}
+    defaultSkill: {fileID: 11400000, guid: f31152d38f7c2bf4eb72b0e7fd6bc628, type: 2}
     skills: []
   partyIndex: 0
 --- !u!114 &46716085376306180
