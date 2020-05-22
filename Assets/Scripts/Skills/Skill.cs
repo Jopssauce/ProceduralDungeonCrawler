@@ -26,14 +26,14 @@ public class Skill : ScriptableObject
     public virtual void CastSkill(Character caster, DungeonManager dungeonManager) { }
 
     //Apply on single target
-    protected virtual void ApplySkill(Character target) { }
+    public virtual void ApplySkill(Character target) { }
 
     //Apply on multiple targets
-    protected virtual void ApplySkill(Character[] targets) { }
+    public virtual void ApplySkill(Character[] targets) { }
 
     //Apply on single target
-    protected virtual void ApplySkill(Character caster, Character target) { }
+    public virtual void ApplySkill(Character caster, Character target) { }
 
     //Apply on multiple targets
-    protected virtual void ApplySkill(Character caster, Character[] targets) { }
+    public virtual void ApplySkill(Character caster, Character[] targets) { }
 }

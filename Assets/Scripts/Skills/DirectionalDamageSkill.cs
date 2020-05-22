@@ -48,7 +48,7 @@ public class DirectionalDamageSkill : DirectionalSkill
 
     }
 
-    protected override void ApplySkill(Character caster, Character[] targets)
+    public override void ApplySkill(Character caster, Character[] targets)
     {
         base.ApplySkill(caster, targets);
 
