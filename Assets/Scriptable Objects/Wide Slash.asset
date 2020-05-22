@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Wide Slash
   m_EditorClassIdentifier: 
   skillName: 
-  type: 0
+  type: 1
   castRange: 1
   mpCost: 2
-  aoeRange: 1
   skillDirection: 0
+  aoeRange: 1
