@@ -16,5 +16,5 @@ MonoBehaviour:
   type: 0
   castRange: 1
   mpCost: 2
-  aoeRange: 0
   skillDirection: 0
+  aoeRange: 0
