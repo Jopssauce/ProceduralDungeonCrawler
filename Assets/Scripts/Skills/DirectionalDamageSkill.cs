@@ -54,7 +54,7 @@ public class DirectionalDamageSkill : DirectionalSkill
 
         for (int i = 0; i < targets.Length; i++)
         {
-            targets[i].stats.DeductHealth((caster.stats.attack * 2) - targets[i].stats.defense);
+            targets[i].stats.Health.DeductBase((caster.stats.Attack.FinalValue * 2) - targets[i].stats.Defense.FinalValue);
         }
     }
 }

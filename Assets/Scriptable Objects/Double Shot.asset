@@ -17,5 +17,6 @@ MonoBehaviour:
   castRange: 1
   mpCost: 2
   skillDirection: 0
-  skillProjectilePrefab: {fileID: 0}
-  arrows: 1
+  skillProjectilePrefab: {fileID: 7151332994311474305, guid: eee9fd4a568c4d3458bd21dab58ecf09,
+    type: 3}
+  arrows: 2

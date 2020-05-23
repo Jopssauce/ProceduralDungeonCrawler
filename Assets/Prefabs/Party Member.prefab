@@ -149,14 +149,30 @@ MonoBehaviour:
   currentTile: {x: 0, y: 0, z: 0}
   speed: 6
   stats:
-    <Health>k__BackingField: 20
-    <Mana>k__BackingField: 15
-    <MaxHealth>k__BackingField: 20
-    <MaxMana>k__BackingField: 15
-    defense: 5
-    magicDefense: 9
-    attack: 14
-    magicAttack: 8
+    Health:
+      <BaseValue>k__BackingField: 0
+      <MaxBaseValue>k__BackingField: 0
+      finalMaxValue: 0
+    Mana:
+      <BaseValue>k__BackingField: 0
+      <MaxBaseValue>k__BackingField: 0
+      finalMaxValue: 0
+    Defense:
+      <BaseValue>k__BackingField: 0
+      <MaxBaseValue>k__BackingField: 0
+      finalMaxValue: 0
+    MagicDefense:
+      <BaseValue>k__BackingField: 0
+      <MaxBaseValue>k__BackingField: 0
+      finalMaxValue: 0
+    Attack:
+      <BaseValue>k__BackingField: 5
+      <MaxBaseValue>k__BackingField: 0
+      finalMaxValue: 0
+    MagicAttack:
+      <BaseValue>k__BackingField: 0
+      <MaxBaseValue>k__BackingField: 0
+      finalMaxValue: 0
   skills:
     defaultSkill: {fileID: 11400000, guid: f31152d38f7c2bf4eb72b0e7fd6bc628, type: 2}
     skills: []

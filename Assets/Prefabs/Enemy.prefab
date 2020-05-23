@@ -144,17 +144,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5df8b253278197d479ff9fe26f96c16b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  grid: {fileID: 0}
+  dungeonManager: {fileID: 0}
   currentTile: {x: 0, y: 0, z: 0}
   speed: 6
   stats:
-    health: 20
-    mana: 15
-    defense: 5
-    magicDefense: 9
-    attack: 14
-    magicAttack: 8
+    Health:
+      <BaseValue>k__BackingField: 20
+      <MaxBaseValue>k__BackingField: 20
+      finalMaxValue: 0
+    Mana:
+      <BaseValue>k__BackingField: 20
+      <MaxBaseValue>k__BackingField: 20
+      finalMaxValue: 0
+    Defense:
+      <BaseValue>k__BackingField: 0
+      <MaxBaseValue>k__BackingField: 0
+      finalMaxValue: 0
+    MagicDefense:
+      <BaseValue>k__BackingField: 0
+      <MaxBaseValue>k__BackingField: 0
+      finalMaxValue: 0
+    Attack:
+      <BaseValue>k__BackingField: 0
+      <MaxBaseValue>k__BackingField: 0
+      finalMaxValue: 0
+    MagicAttack:
+      <BaseValue>k__BackingField: 0
+      <MaxBaseValue>k__BackingField: 0
+      finalMaxValue: 0
   skills:
     defaultSkill: {fileID: 0}
     skills: []
-  facingDirection: {x: 0, y: 0}

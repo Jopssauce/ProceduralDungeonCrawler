@@ -40,6 +40,6 @@ public class DirectionalProjectileSkill : DirectionalSkill
     public override void ApplySkill(Character caster, Character target)
     {
         base.ApplySkill(caster, target);
-        target.stats.DeductHealth((caster.stats.attack * 2) - target.stats.defense);
+        target.stats.Health.DeductBase((caster.stats.Attack.FinalValue * 2) - target.stats.Defense.FinalValue);
     }
 }
