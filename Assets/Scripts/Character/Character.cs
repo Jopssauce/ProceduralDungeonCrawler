@@ -11,6 +11,7 @@ public class Character : GridEntity
     public CharacterStats stats;
     public CharacterSkills skills;
     public CharacterDirection2D characterDirection;
+    public CharacterEquipment characterEquipment;
 
     Vector3Int nextTile;
     public Vector3Int NextTile
@@ -31,6 +32,7 @@ public class Character : GridEntity
     {
         base.Start();
         NextTile = currentTile;
+        characterEquipment.ApplyEquipmentModifiers(stats);
     }
 
     public virtual void SetNextTile(Vector3Int target)

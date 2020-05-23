@@ -2,14 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StatModifier : MonoBehaviour
+[System.Serializable]
+public class StatModifier
 {
     public enum Type
     {
         Flat,
         Percentage
     }
-
     public Type type;
     public float value;
     public int order;

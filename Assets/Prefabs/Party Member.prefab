@@ -174,8 +174,11 @@ MonoBehaviour:
       <MaxBaseValue>k__BackingField: 0
       finalMaxValue: 0
   skills:
-    defaultSkill: {fileID: 11400000, guid: f31152d38f7c2bf4eb72b0e7fd6bc628, type: 2}
+    defaultSkill: {fileID: 11400000, guid: 9a98a8da59c82e8459f1d620da6f79fb, type: 2}
     skills: []
+  characterEquipment:
+    weapon: {fileID: 11400000, guid: ab3927fe7bfd204489f73fd271136c41, type: 2}
+    armor: {fileID: 0}
   partyIndex: 0
 --- !u!114 &46716085376306180
 MonoBehaviour:
