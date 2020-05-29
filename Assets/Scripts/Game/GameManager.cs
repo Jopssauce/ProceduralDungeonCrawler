@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        dungeonManager.dungeonTiler.onComplete += PlaceParty;
+        //dungeonManager.dungeonTiler.onComplete += PlaceParty;
     }
 
     private void Update()

@@ -214,7 +214,7 @@ public class DungeonGenerator : MonoBehaviour
             }
         }
 
-        centerWorldTiles.Add(grid.GetCellCenterWorld(new Vector3Int(centerTile.x, centerTile.y, 0)));
+        centerWorldTiles.Add(grid.GetCellCenterWorld(new Vector3Int(centerTile.x, 0, centerTile.y)));
 
         //Room Walls
         for (int x = randomTile.x; x <= randomTile.x + roomSizeX; x++)
@@ -465,7 +465,7 @@ public class DungeonGenerator : MonoBehaviour
         Gizmos.color = new Color(1, 0, 0, 1f);
         for (int i = 0; i < centerWorldTiles.Count; i++)
         {
-            Gizmos.DrawCube(new Vector3(centerWorldTiles[i].x, centerWorldTiles[i].y, 0), new Vector3(1, 1, 1));
+            Gizmos.DrawCube(new Vector3(centerWorldTiles[i].x, 0, centerWorldTiles[i].y), new Vector3(1, 1, 1));
         }
         Gizmos.color = Color.yellow;
         for (int i = 0; i < worldMidpoints.Count; i++)
@@ -502,8 +502,8 @@ public class DungeonGenerator : MonoBehaviour
             {
                 Vertex v0 = mesh.vertices[edge.P0];
                 Vertex v1 = mesh.vertices[edge.P1];
-                Vector3 p0 = new Vector3((float)v0.x, (float)v0.y, 0.0f);
-                Vector3 p1 = new Vector3((float)v1.x, (float)v1.y, 0.0f);
+                Vector3 p0 = new Vector3((float)v0.x, 0.0f, (float)v0.y);
+                Vector3 p1 = new Vector3((float)v1.x, 0.0f, (float)v1.y);
                 Gizmos.DrawLine(p0, p1);
             }
         }
@@ -516,8 +516,8 @@ public class DungeonGenerator : MonoBehaviour
             {
                 Vertex v0 = mesh.vertices[spanningTree[i].edge.P0];
                 Vertex v1 = mesh.vertices[spanningTree[i].edge.P1];
-                Vector3 p0 = new Vector3((float)v0.x, (float)v0.y, 0.0f);
-                Vector3 p1 = new Vector3((float)v1.x, (float)v1.y, 0.0f);
+                Vector3 p0 = new Vector3((float)v0.x, 0.0f, (float)v0.y);
+                Vector3 p1 = new Vector3((float)v1.x, 0.0f, (float)v1.y);
                 Gizmos.DrawLine(p0, p1);
             }
         }
