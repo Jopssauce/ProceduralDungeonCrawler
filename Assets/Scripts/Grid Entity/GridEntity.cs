@@ -20,8 +20,7 @@ public class GridEntity : MonoBehaviour
     /// <returns></returns>
     protected virtual void MoveToTile(Vector3Int nextTile, float speed)
     {
-        float distanceToDestination = Vector2.Distance(transform.position, grid.GetCellCenterWorld(nextTile));
-
+        float distanceToDestination = Vector3.Distance(transform.position, grid.GetCellCenterWorld(nextTile));
         if (distanceToDestination > 0.1)
         {
             transform.position = GridMovement.MoveToTile(transform.position, nextTile, grid, speed * Time.deltaTime);

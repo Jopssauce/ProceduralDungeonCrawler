@@ -192,8 +192,8 @@ MonoBehaviour:
   roomSize: {x: 9, y: 13}
   roomSpacing: 3
   instantiateDebugTiles: 1
-  showMST: 1
-  showDelaunay: 1
+  showMST: 0
+  showDelaunay: 0
   generateExtraEdges: 1
 --- !u!114 &324176636
 MonoBehaviour:
@@ -689,7 +689,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &2140819813
 MonoBehaviour:
   m_ObjectHideFlags: 0

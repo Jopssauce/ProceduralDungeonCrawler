@@ -89,10 +89,10 @@ public class PartyMovement : MonoBehaviour
         }
         else if (Input.GetAxisRaw("Vertical") != 0)
         {
-            direction = Vector3.up * Input.GetAxisRaw("Vertical");
+            direction = Vector3.forward * Input.GetAxisRaw("Vertical");
             characterDirection.SetFront(new Vector2Int((int)direction.x, (int)direction.y));
 
-            if (!partyLeader.WillCollide(Vector2.up * Input.GetAxisRaw("Vertical"), rayDistance))
+            if (!partyLeader.WillCollide(Vector3.up * Input.GetAxisRaw("Vertical"), rayDistance))
             {
                 partyLeader.SetNextTile(partyLeader.currentTile + grid.WorldToCell(direction));
             }

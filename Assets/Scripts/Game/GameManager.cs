@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        //dungeonManager.dungeonTiler.onComplete += PlaceParty;
+        dungeonManager.dungeonTiler.onComplete += PlaceParty;
     }
 
     private void Update()
@@ -23,8 +23,10 @@ public class GameManager : MonoBehaviour
 
         if (partyManager.partyLeader != null)
         {
-            Vector3 newPos = Vector3.MoveTowards(Camera.main.transform.position, partyManager.partyLeader.transform.position, 50 * Time.deltaTime);
-            Camera.main.transform.position = new Vector3(newPos.x, newPos.y, Camera.main.transform.position.z);
+            Vector3 cameraPos = Camera.main.transform.position;
+            Vector3 leaderPos = partyManager.partyLeader.transform.position;
+            Vector3 newPos = Vector3.MoveTowards(cameraPos, new Vector3(leaderPos.x, leaderPos.y, leaderPos.z - 10), 50 * Time.deltaTime);
+            Camera.main.transform.position = new Vector3(newPos.x, Camera.main.transform.position.y, newPos.z);
         }
     }
 

@@ -18,7 +18,7 @@ public class PartyManager : MonoBehaviour
 
         for (int i = 0; i < partyMembers.Count; i++)
         {
-            PartyMember partyMember = Instantiate(partyMembers[i], position, partyMembers[i].transform.rotation);
+            PartyMember partyMember = Instantiate(partyMembers[i], new Vector3(position.x, 1.5f, position.z), partyMembers[i].transform.rotation);
             partyMember.partyIndex = i;
             partyMember.dungeonManager = dungeonManager;
             party.Add(partyMember);
@@ -27,7 +27,7 @@ public class PartyManager : MonoBehaviour
         for (int i = 1; i < party.Count; i++)
         {
             int index = i - 1;
-            party[i].transform.position = new Vector3(party[index].transform.position.x + 1, party[index].transform.position.y, 0);
+            party[i].transform.position = new Vector3(party[index].transform.position.x + 1, 1.5f, party[index].transform.position.z);
         }
 
         this.partyLeader = party[0];
